@@ -1,0 +1,35 @@
+<h1>Listing lehrers</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Fach1</th>
+      <th>Fach2</th>
+      <th>Fach3</th>
+      <th>Fach4</th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @lehrers.each do |lehrer| %>
+      <tr>
+        <td><%= lehrer.name %></td>
+        <td><%= lehrer.fach1 %></td>
+        <td><%= lehrer.fach2 %></td>
+        <td><%= lehrer.fach3 %></td>
+        <td><%= lehrer.fach4 %></td>
+        <td><%= link_to 'Show', lehrer %></td>
+        <td><%= link_to 'Edit', edit_lehrer_path(lehrer) %></td>
+        <td><%= link_to 'Destroy', lehrer, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Lehrer', new_lehrer_path %>

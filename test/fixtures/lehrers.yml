@@ -1,0 +1,15 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  name: MyString
+  fach1: MyString
+  fach2: MyString
+  fach3: MyString
+  fach4: MyString
+
+two:
+  name: MyString
+  fach1: MyString
+  fach2: MyString
+  fach3: MyString
+  fach4: MyString

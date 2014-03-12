@@ -1,4 +1,6 @@
 Magistros::Application.routes.draw do
+  resources :lehrers
+
   get "home/index"
   resources :users
 
