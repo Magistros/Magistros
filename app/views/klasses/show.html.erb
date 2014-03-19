@@ -1,0 +1,14 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Jahrgang:</strong>
+  <%= @klass.jahrgang %>
+</p>
+
+<p>
+  <strong>Kennzeichnung:</strong>
+  <%= @klass.kennzeichnung %>
+</p>
+
+<%= link_to 'Edit', edit_klass_path(@klass) %> |
+<%= link_to 'Back', klasses_path %>

@@ -1,0 +1,9 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  jahrgang: 1
+  kennzeichnung: MyString
+
+two:
+  jahrgang: 1
+  kennzeichnung: MyString
