@@ -9,5 +9,6 @@ class CreateLehrers < ActiveRecord::Migration
 
       t.timestamps
     end
+    Lehrer.create(:name=>"Gerhard Beermann",:fach1=>"Musik",:fach2=>"Geologie",:fach3=>"---",:fach4=>"---")
   end
 end
