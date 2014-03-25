@@ -1,0 +1,2 @@
+module LehrerviewHelper
+end

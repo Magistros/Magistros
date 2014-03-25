@@ -1,4 +1,7 @@
 Magistros::Application.routes.draw do
+  get "lehrerview/lehrer1"
+  get "testview/show1"
+  post "testview/show2"
   resources :klasses
 
   resources :lehrers

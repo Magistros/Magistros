@@ -1,0 +1,15 @@
+<h1>Lehrerliste</h1>
+<p>Alle auswählbaren Lehrer:</p>
+
+<form action="/testview/show1" method="post">
+	<input type="checkbox" auswahl="auswahl">
+	
+</form>
+<% anz = Lehrer.all.count %>
+<% (1..anz).each do |i| %>
+<%= i %>. <%= Lehrer.find(i).name %> 
+
+
+<br />
+<% end %>
+<form> <input type="submit" value="Bewerten"> </form>

@@ -1,0 +1,11 @@
+<h1>Bewertungsformular</h1>
+
+<p>Sie haben folgenden Lehrer egwählt:
+	<%= params[:auswahl]%> </p>
+
+<p>Bitte bewerten sie den gewählten Lehrer!</p>
+
+<form action="/testview/show2" method="post">
+	<input type="text" fairness="eingabe1"> <br />
+	<input type="submit" value="Absenden">
+</form>
