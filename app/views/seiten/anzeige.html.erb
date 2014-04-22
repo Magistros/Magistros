@@ -1,0 +1,20 @@
+<% if @fehler %>
+<font color ="red" ><b> Sie sind nicht eingeloggt! </b></font><br>
+<a href="/seiten/login">Login</a> <br>
+<% else %>	
+
+<br /><hr />
+<h3> Vielen Dank für deine Bewertung! <h3>
+
+
+<form action "/seiten/anzeige" method "post">
+	<input type = "hidden" name="zurbewertung" value = "true">
+	<input type = "submit" value="Einen weiteren Lehrer bewerten">
+</forms>	
+
+<form action "/seiten/anzeige" method "post">
+	<input type = "hidden" name="logout" value = "true">
+	<input type = "submit" value="Logout">
+</forms>
+
+<% end %>

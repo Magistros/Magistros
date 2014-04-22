@@ -1,0 +1,44 @@
+<% if @fehler %>
+<font color ="red" ><b> Sie sind nicht eingeloggt! </b></font><br>
+<a href="/seiten/login">Login</a> <br>
+<% elsif @fehler3 %>
+<font color = "red"><b>Eingegebene Nummer nicht vorhanden!<br /></b></font>
+<a href="/seiten/welcome">Zurück</a> <br>
+<% else %>
+
+<br /><hr />
+<h1> Hallo <%= $vorname %></h1>
+
+<hr />
+
+<h4> Welchen Lehrer möchten Du bewerten?<h4>
+<h4> Beachte: Du kannst jeden Lehrer nur einmal bewerten!<h4>
+
+	<hr />
+<h3> <b>Wähle einen Lehrer aus:</b> <h3> 
+
+<h4>
+
+<% $db_anz = Lehrer.all.count %>
+<% (1..$db_anz).each do |i| %>
+<%= i %>.: <%= Lehrer.find(i).name %> <br />
+<% end %>
+<h4>
+
+<br />
+<p>Bitte gebe die Nummer des Lehrers ein:</p>
+<form action "/seiten/welcome" method "post">
+	<table with "30%">
+		<tr><td>Lehrer Id:</td><td> <input type = "numbers" name = "id_nummer"> </td></tr>
+		
+		<tr><td></td><td> <input type = "submit" value = "Bewertung"> </td></tr>
+		
+	</table>
+</form>
+
+<form action "/seiten/welcome" method "post">
+	<input type = "hidden" name="logout" value = "true">
+	<input type = "submit" value="Logout">
+</forms>	
+
+<% end %>

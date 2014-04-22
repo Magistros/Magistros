@@ -1,0 +1,31 @@
+<% if @fehler %>
+<font color ="red" ><b> Sie sind nicht eingeloggt! </b></font><br>
+<a href="/seiten/login">Login</a> <br>
+<% else %>
+
+
+
+<br /><hr />
+<h1> Bewertung durch den Schüler <%= $vorname %> <%= @nachname %> </h1><hr />
+
+<h5> Du hast folgenden Lehrer gewählt: <h5> <h3><%= Lehrer.find($id).name %> <br />	<h3>
+<h5> Bitte gebe Deine Bewertung als Zahl ein: <h5> 	
+<h4> von 1 sehr schlecht --- bis 10 sehr gut <h4>	
+
+
+<form action "/seiten/bewertung" method "post">
+	<table with "10%">
+		<tr><td>Unterrichtsgestaltung:</td><td> <input type = "integer" name = "ug"> </td></tr>
+		<tr><td>Unterrichtsvorbereitung:</td><td> <input type = "integer" name = "uv"> </td></tr>
+		<tr><td>Umgang mit den Schülern:</td><td> <input type = "integer" name = "ums"> </td></tr>
+		<tr><td>Freudlichkeit:</td><td> <input type = "integer" name = "fk"> </td></tr>
+		<tr><td></td><td> <input type = "submit" value = "Speichern"> </td></tr>
+	</table>
+</form>
+
+<form action "/seiten/bewertung" method "post">
+	<input type = "hidden" name="logout" value = "true">
+	<input type = "submit" value="Logout">
+</forms>	
+
+<% end %>

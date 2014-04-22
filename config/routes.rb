@@ -1,4 +1,16 @@
 Magistros::Application.routes.draw do
+  get "seiten/login"
+
+  post "seiten/login"
+
+  get "seiten/welcome"
+
+  post "seiten/welcome"
+  
+  get "seiten/bewertung"
+  get "seiten/anzeige"
+  get "seiten/lehreranzeige"
+  get "seiten/logout"
   get "lehrerview/lehrer1"
   get "testview/show1"
   post "testview/show2"

@@ -1,0 +1,18 @@
+<br /> <br /> <br />
+<h1>Login</h1>
+<hr />
+<% if @fehler1 %>
+<font color = "red"><b>User existiert nicht!<br /></b></font>
+<% elsif @fehler2 %>
+<font color = "red"><b>Passwort und Username stimmen nicht überein!<br /></b></font>
+<% end %>
+<br />
+
+<p>Geben Sie zum einloggen ihren Benutzernamen und ihr Passwort ein.</p>
+<form action "/seiten/login" method "post">
+	<table with "30%">
+		<tr><td>Benutzername:</td><td> <input type = "text" name = "nachname"> </td></tr>
+		<tr><td>Passwort:</td><td> <input type = "password" name = "passwort"> </td></tr>
+		<tr><td></td><td> <input type = "submit" value = "Login"> </td></tr>
+	</table>
+</form>
