@@ -70,7 +70,12 @@ class SeitenController < ApplicationController
   end
 
   def anzeige
-    if params[:logout] != nil
+       #if params[:zurbewertung] != nil
+    # redirect_to(:action => 'bewertung') and return
+    #end 
+
+
+   if params[:logout] != nil
      session[:nachname] = nil
      redirect_to(:action => 'logout')
     end
@@ -81,10 +86,7 @@ class SeitenController < ApplicationController
     else
      @nachname = session[:nachname] 
     end
-      if params[:zurbewertung] != nil
-     session[:nachname] = nil
-     #redirect_to(:action => 'bewertung')
-    end 
+  
    
   end
 
