@@ -70,9 +70,9 @@ class SeitenController < ApplicationController
   end
 
   def anzeige
-       #if params[:zurbewertung] != nil
-    # redirect_to(:action => 'bewertung') and return
-    #end 
+       if params[:zurbewertung] != nil
+     redirect_to(:action => 'bewertung') and return
+    end 
 
 
    if params[:logout] != nil
