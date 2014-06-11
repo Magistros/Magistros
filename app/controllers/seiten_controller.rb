@@ -6,6 +6,14 @@ class SeitenController < ApplicationController
     
 
     if params[:nachname] != nil
+
+      if Lehrer.find_by_name(params[:nachname]) == nil
+        @fehler1 = true
+      elsif Lehrer.find_by_name(params[:nachname]).fach1 == params[:passwort]
+       session[:lehrername] = params[:nachname]
+       redirect_to(:action => 'lehreranzeige')
+        end
+
       if User.find_by_nachname(params[:nachname]) == nil
         @fehler1 = true
       elsif User.find_by_nachname(params[:nachname]).passwort == params[:passwort]
@@ -28,11 +36,12 @@ class SeitenController < ApplicationController
 
     @fehler = false
     if session[:nachname] == nil
-     @fehler = true 
+      @fehler = true
     else
      @nachname = session[:nachname]
      $vorname = session[:vorname] 
-    end  
+     
+    end 
    
     @fehler3 = false
    
@@ -91,6 +100,16 @@ class SeitenController < ApplicationController
   end
 
   def lehreranzeige
+       if params[:logout] != nil
+      session[:lehrername] = nil
+      redirect_to(:action => 'logout')
+       end
+
+    if session[:lehrername] == nil
+      @fehler
+    else
+         $vorname = session[:lehrername] 
+    end
   end
 
   def logout

@@ -1,2 +1,33 @@
-<h1>Seiten#lehreranzeige</h1>
-<p>Find me in app/views/seiten/lehreranzeige.html.erb</p>
+<% if @fehler %>
+<font color ="red" ><b> Sie sind nicht eingeloggt! </b></font><br>
+<a href="/seiten/login">Login</a> <br>
+<% elsif @fehler3 %>
+<font color = "red"><b>Eingegebene Nummer nicht vorhanden!<br /></b></font>
+<a href="/seiten/welcome">Zurück</a> <br>
+<% else %>
+
+<br /><hr />
+<h1> Hallo <%= $vorname %></h1>
+
+<hr />
+
+<h4> Sie sind also ein Lehrer!<h4>
+<h4> Möchten sie ihre Bewertungen ansehen?<h4>
+
+	<hr />
+<h3> <b>...</b> <h3> 
+
+<h4>Hier sollten eigentlich die Bewertungen stehen...<h4>
+
+
+<h4>
+
+<br />
+
+
+<form action "/seiten/welcome" method "post">
+	<input type = "hidden" name="logout" value = "true">
+	<input type = "submit" value="Logout">
+</forms>	
+
+<% end %>
