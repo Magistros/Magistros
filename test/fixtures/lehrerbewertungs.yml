@@ -1,0 +1,17 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  ug: 1
+  uv: 1
+  fr: 1
+  ums: 1
+  lehrerid: 1
+  anzahl: 1
+
+two:
+  ug: 1
+  uv: 1
+  fr: 1
+  ums: 1
+  lehrerid: 1
+  anzahl: 1

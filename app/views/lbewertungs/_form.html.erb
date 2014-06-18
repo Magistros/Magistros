@@ -1,0 +1,41 @@
+<%= form_for(@lbewertung) do |f| %>
+  <% if @lbewertung.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@lbewertung.errors.count, "error") %> prohibited this lbewertung from being saved:</h2>
+
+      <ul>
+      <% @lbewertung.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :ug %><br>
+    <%= f.number_field :ug %>
+  </div>
+  <div class="field">
+    <%= f.label :uv %><br>
+    <%= f.number_field :uv %>
+  </div>
+  <div class="field">
+    <%= f.label :fr %><br>
+    <%= f.number_field :fr %>
+  </div>
+  <div class="field">
+    <%= f.label :ums %><br>
+    <%= f.number_field :ums %>
+  </div>
+  <div class="field">
+    <%= f.label :lehrerid %><br>
+    <%= f.number_field :lehrerid %>
+  </div>
+  <div class="field">
+    <%= f.label :anzahl %><br>
+    <%= f.number_field :anzahl %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

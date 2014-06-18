@@ -1,4 +1,8 @@
 Magistros::Application.routes.draw do
+  resources :lbewertungs
+
+  resources :lehrerbewertungs
+
   get "seiten/login"
 
   post "seiten/login"

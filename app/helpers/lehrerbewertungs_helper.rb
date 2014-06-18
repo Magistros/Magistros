@@ -1,0 +1,2 @@
+module LehrerbewertungsHelper
+end

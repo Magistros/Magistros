@@ -1,3 +1,3 @@
 class Lehrer < ActiveRecord::Base
-	has_many :klasses
+	has_many :lbewertungs
 end

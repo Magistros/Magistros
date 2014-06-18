@@ -1,0 +1,37 @@
+<h1>Listing lehrerbewertungs</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Ug</th>
+      <th>Uv</th>
+      <th>Fr</th>
+      <th>Ums</th>
+      <th>Lehrerid</th>
+      <th>Anzahl</th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @lehrerbewertungs.each do |lehrerbewertung| %>
+      <tr>
+        <td><%= lehrerbewertung.ug %></td>
+        <td><%= lehrerbewertung.uv %></td>
+        <td><%= lehrerbewertung.fr %></td>
+        <td><%= lehrerbewertung.ums %></td>
+        <td><%= lehrerbewertung.lehrerid %></td>
+        <td><%= lehrerbewertung.anzahl %></td>
+        <td><%= link_to 'Show', lehrerbewertung %></td>
+        <td><%= link_to 'Edit', edit_lehrerbewertung_path(lehrerbewertung) %></td>
+        <td><%= link_to 'Destroy', lehrerbewertung, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Lehrerbewertung', new_lehrerbewertung_path %>

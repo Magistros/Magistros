@@ -73,21 +73,30 @@ class SeitenController < ApplicationController
 
    if params[:ug] != nil
     $ug = params[:ug]
-    redirect_to(:action => 'anzeige')
+    Lbewertung.find_by_lehrerid($id).ug = Lbewertung.find_by_lehrerid($id).ug + $ug
+   end  
+    if params[:uv] != nil
+    $uv = params[:uv]
+    Lbewertung.find_by_lehrerid($id).uv = Lbewertung.find_by_lehrerid($id).uv + $uv
+   end
+    if params[:ums] != nil
+    $ums = params[:ums]
+    Lbewertung.find_by_lehrerid($id).ums = Lbewertung.find_by_lehrerid($id).ums + $ums
   end
+    if params[:fk] != nil
+    $fk = params[:fk]
+    Lbewertung.find_by_lehrerid($id).fr = Lbewertung.find_by_lehrerid($id).fr + $fk
+  end
+    Lbewertung.find_by_lehrerid($id).anzahl = Lbewertung.find_by_lehrerid($id).anzahl + 1
+    redirect_to(:action => 'anzeige')
+  
 
   end
 
   def anzeige
        if params[:zurbewertung] != nil
-     redirect_to(:action => 'bewertung') and return
+     redirect_to(:action => 'welcome') and return
     end 
-
-
-   if params[:logout] != nil
-     session[:nachname] = nil
-     redirect_to(:action => 'logout')
-    end
 
     @fehler = false
     if session[:nachname] == nil
@@ -105,10 +114,12 @@ class SeitenController < ApplicationController
       redirect_to(:action => 'logout')
        end
 
+
     if session[:lehrername] == nil
       @fehler
     else
          $vorname = session[:lehrername] 
+         Lehrer.find_by_name(params[:lehrername]).id = $ID
     end
   end
 
