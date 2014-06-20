@@ -71,25 +71,29 @@ class SeitenController < ApplicationController
      @nachname = session[:nachname] 
    end
 
-   if params[:ug] != nil
+    if params[:ug] != nil
     $ug = params[:ug]
-    Lbewertung.find_by_lehrerid($id).ug = Lbewertung.find_by_lehrerid($id).ug + $ug
-   end  
+    Lbewertung.find_by_lehrerid($id).ug = Lbewertung.find_by_lehrerid($id).ug + $ug.to_i
+    
     if params[:uv] != nil
     $uv = params[:uv]
-    Lbewertung.find_by_lehrerid($id).uv = Lbewertung.find_by_lehrerid($id).uv + $uv
-   end
+    Lbewertung.find_by_lehrerid($id).uv = Lbewertung.find_by_lehrerid($id).uv + $uv.to_i
+   
     if params[:ums] != nil
     $ums = params[:ums]
-    Lbewertung.find_by_lehrerid($id).ums = Lbewertung.find_by_lehrerid($id).ums + $ums
-  end
+    Lbewertung.find_by_lehrerid($id).ums = Lbewertung.find_by_lehrerid($id).ums + $ums.to_i
+ 
     if params[:fk] != nil
     $fk = params[:fk]
-    Lbewertung.find_by_lehrerid($id).fr = Lbewertung.find_by_lehrerid($id).fr + $fk
-  end
-    Lbewertung.find_by_lehrerid($id).anzahl = Lbewertung.find_by_lehrerid($id).anzahl + 1
-    redirect_to(:action => 'anzeige')
+    Lbewertung.find_by_lehrerid($id).fr = Lbewertung.find_by_lehrerid($id).fr + $fk.to_i
   
+
+    Lbewertung.find_by_lehrerid($id).anzahl = Lbewertung.find_by_lehrerid($id).anzahl + 1
+   redirect_to(:action => 'anzeige')
+   end
+ end
+end
+end
 
   end
 
@@ -119,7 +123,7 @@ class SeitenController < ApplicationController
       @fehler
     else
          $vorname = session[:lehrername] 
-         Lehrer.find_by_name(params[:lehrername]).id = $ID
+        # $ID = Lehrer.find_by_name(params[:lehrername]).id
     end
   end
 

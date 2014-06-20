@@ -37,6 +37,7 @@ ActiveRecord::Schema.define(version: 20140618142204) do
     t.integer  "fr"
     t.integer  "ums"
     t.integer  "lehrerid"
+    t.integer  "anzahl"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
