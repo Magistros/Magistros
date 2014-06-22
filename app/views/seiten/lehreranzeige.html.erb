@@ -12,12 +12,19 @@
 <hr />
 
 <h4> Sie sind also ein Lehrer!<h4>
-<h4> Möchten sie ihre Bewertungen ansehen?<h4>
+<h4> Durchschnittlich wurden sie folgendermaßen bewertet:<h4>
 
 	<hr />
 <h3> <b>...</b> <h3> 
 
-<h4>Unterrichtsgestaltung:  <%= Lbewertung.find_by_lehrerid(1).ug %><h4>
+<h4>Unterrichtsgestaltung:  <%= Lehrer.find($ID).ug / Lehrer.find($ID).Anzahl %><h4>
+	<h4>Unterrichtsvorbereitung:  <%= Lehrer.find($ID).uv / Lehrer.find($ID).Anzahl  %><h4>
+		<h4>Umgang mit Schülern:  <%= Lehrer.find($ID).ums / Lehrer.find($ID).Anzahl %><h4>
+			<h4>Freundlichkeit:  <%= Lehrer.find($ID).fr / Lehrer.find($ID).Anzahl %><h4>
+
+				<hr />
+
+				<h4>Sie wurden  <%= Lehrer.find($ID).Anzahl %> mal bewertet.<h4>
 
 
 <h4>
