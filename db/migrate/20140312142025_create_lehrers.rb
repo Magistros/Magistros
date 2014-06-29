@@ -6,11 +6,11 @@ class CreateLehrers < ActiveRecord::Migration
       t.string :fach2
       t.string :fach3
       t.string :fach4
-      t.string :ug
-      t.string :uv
-      t.string :ums
-      t.string :fr
-      t.string :anzahl
+      t.integer :ug
+      t.integer :uv
+      t.integer :ums
+      t.integer :fr
+      t.integer :Anzahl
 
       t.timestamps
     end

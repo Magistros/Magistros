@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140622132959) do
+ActiveRecord::Schema.define(version: 20140618142204) do
 
   create_table "klasses", force: true do |t|
     t.integer  "jahrgang"
@@ -48,13 +48,13 @@ ActiveRecord::Schema.define(version: 20140622132959) do
     t.string   "fach2"
     t.string   "fach3"
     t.string   "fach4"
-    t.datetime "created_at"
-    t.datetime "updated_at"
     t.integer  "ug"
     t.integer  "uv"
     t.integer  "ums"
     t.integer  "fr"
     t.integer  "Anzahl"
+    t.datetime "created_at"
+    t.datetime "updated_at"
   end
 
   create_table "users", force: true do |t|
