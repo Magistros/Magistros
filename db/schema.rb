@@ -11,33 +11,11 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140618142204) do
+ActiveRecord::Schema.define(version: 20140319134747) do
 
   create_table "klasses", force: true do |t|
     t.integer  "jahrgang"
     t.string   "kennzeichnung"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-  end
-
-  create_table "lbewertungs", force: true do |t|
-    t.integer  "ug"
-    t.integer  "uv"
-    t.integer  "fr"
-    t.integer  "ums"
-    t.integer  "lehrerid"
-    t.integer  "anzahl"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-  end
-
-  create_table "lehrerbewertungs", force: true do |t|
-    t.integer  "ug"
-    t.integer  "uv"
-    t.integer  "fr"
-    t.integer  "ums"
-    t.integer  "lehrerid"
-    t.integer  "anzahl"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
