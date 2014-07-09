@@ -71,7 +71,7 @@ class SeitenController < ApplicationController
      @nachname = session[:nachname] 
    end
 
-    if params[:ug] != nil && params[:uv] != nil && params[:ums] != nil && params[:fk] != nil
+    if !params[:ug].blank? && !params[:uv].blank? && !params[:ums].blank? && !params[:fk].blank?
     $ug = params[:ug]
     a = Lehrer.find($id)
     a.ug = a.ug + $ug.to_i
